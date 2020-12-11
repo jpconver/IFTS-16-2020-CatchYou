@@ -70,7 +70,7 @@ public class Inicializador {
 			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
-			clip.loop(reiniciaJuego);;
+			clip.loop(reiniciaJuego);
 		} catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
 			System.out.println("Error al reproducir el sonido.");
 		}
