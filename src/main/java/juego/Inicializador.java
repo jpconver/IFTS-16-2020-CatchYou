@@ -29,7 +29,7 @@ public class Inicializador {
 
 		while (true) {
 			if (Juego.juegoFinalizado) {	
-				reiniciaJuego = JOptionPane.showConfirmDialog(null, "Oh no! Te atraparon! Volver a jugar?", "¡ Game Over !", JOptionPane.YES_NO_OPTION);
+				reiniciaJuego = JOptionPane.showConfirmDialog(null, "Te atraparon Mauricio! Volver a jugar?", "¡ Game Over !", JOptionPane.YES_NO_OPTION);
 				if (reiniciaJuego == 0) {	
 					reiniciaValores();
 				} else if (reiniciaJuego == 1) {
@@ -70,7 +70,7 @@ public class Inicializador {
 			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
-			clip.start();
+			clip.loop(reiniciaJuego);;
 		} catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
 			System.out.println("Error al reproducir el sonido.");
 		}
