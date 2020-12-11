@@ -87,8 +87,8 @@ public class Juego extends JPanel {
 		g1.drawString("Nivel: " + nivel, 570, 30);
 
 		if (juegoFinalizado) {
-			g2D.setColor(Color.GREEN);
-			g2D.drawString("¡ Game Over !", ((float) getBounds().getCenterX() / 2) + 170, 70);
+			g2D.setColor(Color.BLACK);
+			g2D.drawString("Gracias D10S !", ((float) getBounds().getCenterX() / 2) + 210, 70);
 		}
 	}
 
