@@ -11,10 +11,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Inicializador {
-public static int reiniciaJuego = -1;
-	
+	public static int reiniciaJuego = -1;
+
 	public static void main(String[] args) {
-		String nombresonido = "/java/backgroundMusic.wav";
+		String nombresonido = "/dontLetThemCatchYou-main/src/main/resources/sonidos/backgroundMusic.wav";
 		ReproducirSonido(nombresonido);
 		JOptionPane.showMessageDialog(null, "¿Preparados?");
 		System.setProperty("sun.java2d.opengl", "true");
@@ -42,7 +42,7 @@ public static int reiniciaJuego = -1;
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
+
 				if (Juego.pierdeIntentoVida == true) {
 					JOptionPane.showMessageDialog(null, "Cuidado!! Te quedan: " + Juego.intentosVidas + " intentos");
 					Juego.pierdeIntentoVida = false;
@@ -54,7 +54,7 @@ public static int reiniciaJuego = -1;
 			}
 		}
 	}
-	
+
 	public static void reiniciaValores() {
 		Juego.juegoFinalizado = false;
 		Enemigo.auxiliarX = -4;
@@ -64,16 +64,16 @@ public static int reiniciaJuego = -1;
 		reiniciaJuego = -1;
 		Enemigo.inicialX = 1300;
 	}
-	
+
 	public static void ReproducirSonido(String nombreSonido){
-	       try {
-	        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
-	        Clip clip = AudioSystem.getClip();
-	        clip.open(audioInputStream);
-	        clip.start();
-	       } catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-	         System.out.println("Error al reproducir el sonido.");
-	       }
-	     }
+		try {
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start();
+		} catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+			System.out.println("Error al reproducir el sonido.");
+		}
+	}
 
 }
